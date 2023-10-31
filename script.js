@@ -14,15 +14,20 @@ function convertToRoman(num) {
     { value: 4, symbol: 'IV' },
     { value: 1, symbol: 'I' }
   ];
-  
+
   let romanNumeral = '';
-  
+
   for (let i = 0; i < romanNumerals.length; i++) {
     while (num >= romanNumerals[i].value) {
       romanNumeral += romanNumerals[i].symbol;
       num -= romanNumerals[i].value;
     }
   }
-  
+
   return romanNumeral;
 }
+
+// Example usage:
+const number = 3549;
+const romanRepresentation = convertToRoman(number);
+console.log(romanRepresentation); // Output: "MMMDXLIX"
